@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * print_x - A function that prints an ascii char value in
+ * print_hex_low - A function that prints an ascii char value in
  * lowercase hexadecimal
  * @x: char to print
  * Return: number of printed characters

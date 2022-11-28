@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * print_X - A function that prints an ascii character value
+ * print_hex_upp - A function that prints an ascii character value
  * in uppercase hexadecimal
  * @X: char to print
  * Return: number of printed characters

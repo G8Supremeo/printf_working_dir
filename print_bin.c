@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_b - A function that prints an unsigned int i binary notation
+ * print_bin - A function that prints an unsigned int i binary notation
  * @b: unsigned in to print
  * Return: number of printed digits
  */

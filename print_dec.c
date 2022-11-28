@@ -7,7 +7,7 @@
  * Return: int
  */
 
-int pr_dec(va_list args)
+int print_dec(va_list args)
 {
 	int num = va_arg(args, unsigned int);
 	int cnt = 0;

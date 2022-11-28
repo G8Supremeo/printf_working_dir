@@ -32,5 +32,6 @@ int print_rev(va_list r);
 int print_rot13(va_list R);
 int print_str(va_list args);
 int print_uns(va_list u);
+int cnvrt_to_dec(int n, int *cnt);
 
 #endif /* _MAIN_H_ */

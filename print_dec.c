@@ -1,42 +1,50 @@
 #include "main.h"
+#include <limits.h>
 
 /**
- * print_dec - prints a given integer from variadic parameters to base 10
- * @args: variadic parameter
- *
- * Return: number of characters printed on Success
+ * pr_dec - prints the decimal representation of a number
+ * @args: va_list
+ * Return: int
  */
 
-int print_dec(va_list args)
+int pr_dec(va_list args)
 {
-	int i = 0;
-	int count = 0;
-	int numb;
-	int my_arr[10];
-	char x[1];
+	int num = va_arg(args, unsigned int);
+	int cnt = 0;
+	int *ptr = &cnt;
 
+	if (num < 0)
+		cnt += _putchar('-');
 
-	numb = va_arg(args, int);
+	return (cnvrt_to_dec(num, ptr));
+}
 
+/**
+ * cnvrt_to_dec - converts to decimal
+ * @n: int
+ * @cnt: int pointer
+ * Return: int
+ */
 
-	while (numb != 0)
+int cnvrt_to_dec(int n, int *cnt)
+{
+	if (n < 0 && n == INT_MIN)
 	{
-		my_arr[i] = (numb % 10);
-		numb = numb / 10;
+		unsigned int num = n * -1;
 
-		if (numb == 0)
-		{
-			break;
-			i++;
-		}
+		if (num / 10)
+			cnvrt_to_dec(num / 10, cnt);
+		*cnt += _putchar((num % 10) + '0');
+		return (*cnt);
 	}
 
-	/*Write the contents of the array to stdout*/
-	for (i = 0; i >= 0; i--)
-	{
-		x[0] = ('0' + my_arr[i]); /*Convert int to char*/
-		count += write(1, &x, 1);
-	}
+	if (n < 0)
+		n *= -1;
 
-	return (count);
+	if (n / 10)
+		cnvrt_to_dec(n / 10, cnt);
+
+	*cnt += _putchar((n % 10) + '0');
+
+	return (*cnt);
 }

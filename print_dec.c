@@ -23,10 +23,12 @@ int print_dec(va_list args)
 	{
 		my_arr[i] = (numb % 10);
 		numb = numb / 10;
-		if (numb == 0)
-			break;
 
+		if (numb == 0)
+		{
+			break;
 			i++;
+		}
 	}
 
 	/*Write the contents of the array to stdout*/

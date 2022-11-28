@@ -29,10 +29,11 @@ int print_int(va_list args)
 	}
 
 	/*Write the contents of the array to stdout*/
-	for (i; i >= 0; i--)
+	while (i >= 0)
 	{
 		x[0] = ('0' + my_arr[i]); /*Convert int to char*/
 		count += write(1, x, 1);
+		i--;
 	}
 
 	return (count);

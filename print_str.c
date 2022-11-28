@@ -10,18 +10,16 @@
 
 int print_str(va_list args)
 {
-	int i;
 	int count = 0;
-	char *str;
+	char *str = va_arg(args, char *);
 
-	str = va_arg(args, char *);
 	if (str == NULL)
-		return (-1);
+		str = "(null)";
 
-	while (str[i])
+	while (*str)
 	{
-		count = _putchar(str[i]);
-		i = i + 1;
+		count = _putchar(*str);
+		str++;
 	}
 
 	return (count);
